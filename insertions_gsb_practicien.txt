@@ -1,0 +1,31 @@
+-- Régions
+INSERT INTO region (nom) VALUES ('Île-de-France'), ('Corse');
+
+-- Départements
+INSERT INTO departement (nom, id_region) VALUES 
+('Paris', 1),
+('Haute-Corse', 2);
+
+-- Villes
+INSERT INTO ville (nom, code_postal, id_departement) VALUES
+('Paris', '75000', 1),
+('Bastia', '20200', 2);
+
+-- Types de médecins
+INSERT INTO type_medecin (libelle) VALUES
+('Généraliste'),
+('Cardiologue'),
+('Chirurgien');
+
+-- Medecins liés aux villes + types
+INSERT INTO medecin (nom, prenom, specialite, salaire, id_ville, id_type) VALUES
+('Dupont','Jean','Cardiologue',5000,1,2),
+('Martin','Claire','Généraliste',4000,2,1);
+
+-- Utilisateurs avec rôles
+INSERT INTO utilisateur (nom, mdp, role) VALUES
+('admin','admin','Admin'),
+('paul.rh','rh123','RH'),
+('jean.dupont','doc123','Medecin');
+
+
